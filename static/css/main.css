@@ -1,0 +1,210 @@
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "list chat";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 9fr;
+    grid-gap: 5px;
+    transition: 1s;
+}
+.header{
+    transition: 1s;
+    height: calc((100vh*0.1)- 5px);
+    border: 1px solid black;
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    background-color: #fd3175;
+    color: white;
+}
+.header span#logo{
+    padding-left: 10px;
+    font-size: 1.75rem;
+    font-weight: 1000;
+    letter-spacing: -2px;
+}
+.header ul#nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+}
+.header ul#nav li:hover{
+    cursor: pointer;
+}
+.header ul#nav li{
+    display: inline;
+    font-size: 1.75rem;
+    letter-spacing: calc(100vw/15);
+}
+.menu{
+    transition: 1s;
+    height: calc(100vh*0.9);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-area: list;
+    border: 1px solid black;
+    /* resize:horizontal;
+    overflow: auto; */
+    color: white;
+    background-color: #2FA4FF;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.menu ul{
+    flex: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.menu ul#friends{
+    display: block;
+}
+.menu div#nav{
+    background-color: #2FA4FF;
+    top: 0;
+    position: sticky;
+    border-top: 5px solid white;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    border: 0;
+    font-size: 1.75rem;
+    border-bottom: 1px solid white;
+}
+.menu::-webkit-scrollbar{
+    display: none;
+}
+.menu ul li{
+    display: grid;
+    padding: 10px;
+    justify-content: center;
+    z-index: 1;
+}
+.menu ul li:not(:last-child){
+    border-bottom: 1px solid black;
+}
+.chat{
+    transition: 1s;
+    height: calc(100vh*0.9);
+    grid-area: chat;
+    border: 1px solid black;
+    width: auto;
+    background-color: #0E185F;
+    color: #000;
+    border-top-left-radius: 10px;
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+}
+.chat ul#chatlog{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.chat #chatlog li{
+    list-style: none;
+    margin: 10px;
+    word-break: break-all;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 15px;
+    background-color: white;
+}
+.chat #chatlog li#chat{
+    border-top-left-radius: 0;
+}
+.chat #chatlog li#userchat{
+    margin-left: auto;
+    border-top-right-radius: 0;
+    background-color: #fd3175;
+    color:aquamarine;
+}
+.chat #chatlog li div.message{
+    font-size: 1.2rem;
+    padding-top: 10px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+.chat #chatlog li#userchat div.sender{
+    text-align: right;
+}
+.chat #chatlog::-webkit-scrollbar{
+    width: 20px;
+}
+.chat #chatlog::-webkit-scrollbar-thumb{
+    background-color: #fd3175;
+    border-radius: 20px;
+}
+.chat #chatlog::-webkit-scrollbar-track{
+    background-color: #0E185F;
+}
+.chat #chatlog li div.sender{
+    font-weight: 1000;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.chat #chatlog li div.sender span#name{
+    align-self: center;
+    padding-left: 20px;
+}
+.chat #chatlog li#userchat div.sender span#time{
+    margin-left: 10px;
+    color: white;
+    font-size: 0.9rem;
+    align-self:center;
+}
+.chat #chatlog li#chat div.sender span#time{
+    margin-left: 10px;
+    color: black;
+    font-size: 0.9rem;
+    align-self:center;
+}
+.chat #chatlog li div.sender #profile{
+    width:50px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.chat form#chat{
+    display: grid;
+    margin-bottom: 5px;
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr;
+    grid-template-areas: 
+    "name name submit"
+    "id id submit"
+    "input input submit";
+    grid-gap: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.chat #chat input:focus{
+    outline: 0;
+    border-radius: 10px;
+    transition: 1s;
+}
+.chat #chat input:not(:focus){
+    border-radius: 30px;
+    transition:  1s;
+}
+.chat #chat input, .chat #chat button{
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+.chat #chat input#name{ grid-area: name; font-weight: 1000;}
+.chat #chat input#id { grid-area:  id; font-weight: 1000;;}
+.chat #chat input#chat{grid-area: input;margin: 0;}
+.chat #chat button#submit {grid-area: submit;background-color: #fd3175; font-size: 2.25rem; color: white;}
