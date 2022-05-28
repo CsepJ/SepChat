@@ -5,3 +5,5 @@ private/
 data/data.db
 
 image/
+
+sessions/
