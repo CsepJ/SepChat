@@ -129,6 +129,9 @@ app.use("/main", async (req,res) => {
         res.redirect("/signup");
     }
 });
+app.get("/support", (req,res) => {
+    res.render("support.ejs")
+})
 app.use("/login", async (req,res) => {
     if(req.method == "GET"){
         let error = req.query.error?req.query.error:null;

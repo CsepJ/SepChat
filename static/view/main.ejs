@@ -13,9 +13,11 @@
     <script type="text/javascript" src="/javascript/main.js"></script>
 </head>
 <body>
+    <div id="popup"></div>
     <div class="header">
         <span id="logo">SepChat</span>
         <ul id="nav">
+            <li id="dark-mode"><i class="bi bi-moon-fill"></i></li>
             <li id="account"><i class="bi bi-person-circle"></i></li>
             <li id="support"><i class="bi bi-question-circle"></i></li>
             <li id="hide"><i class="bi bi-x-lg"></i></li>
@@ -38,13 +40,15 @@
     </span>
     <span class="chat">
         <ul id="chatlog">
+            <!-- 채팅창 -->
         </ul>
-        <form id="chat" onsubmit="javascript:event.preventDefault()">
+        <form id="input" onsubmit="javascript:event.preventDefault()">
             <input id="name" name="name" type="text" value="<%=name%>" readonly/>
             <input id="id" name="id" type="text" value="<%=id%>" readonly/>
-            <input id="chat" type="text" name="chat" maxlength=300 placeholder="채팅 입력란" autocomplete="off" autofocus required />
+            <input id="input" type="text" name="chat" maxlength=300 placeholder="채팅 입력란" autocomplete="off" autofocus required />
             <button type="submit" class="button" id="submit"><i class="bi bi-send"></i></button>
         </form>
     </span>
 </body>
 </html>
+<!-- 이걸 보신다니.... 대단하시군요...? -->
