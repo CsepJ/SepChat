@@ -44,6 +44,11 @@ app.use(express.static(__dirname+"/../static"));
 
 // < APP SIDE > //
 
+app.get("/", (req,res) => {
+    res.send("루트 경로 페이지는 제작중입니다.");
+    res.end();
+})
+
 app.use("/signup", async (req,res) => {
     if(req.method == "GET"){
         let error = req.query.error?req.query.error:null;

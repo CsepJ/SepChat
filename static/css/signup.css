@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+input::placeholder{
+    color: var(--input-placeholder-color);
+}
+input:focus{
+    background-color: gray;
+    --input-placeholder-color: white;
+    color: white;
+}
 body{
     margin: 0;
     height: 100vh;
@@ -58,29 +72,29 @@ form *{
     transition: 1s;
 }
 form input:not(#submit){ 
-    padding: 5vw;
+    padding: 3vh;
     font-size:2rem;
+    transition: 1s;
 }
 form input#submit{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     grid-area: submit;
-    font-weight: 400;
     font-size: 2rem;
     background-color: #fd3175;
     color: white;
     border: 0;
-    border: 3px solid black;
-    padding: 1rem;
+    padding: 3vh;
 }
 form span#profile{
     color: white;
-    border: 3px solid black;
+    font-family: "LeferiPoint-WhiteObliqueA", sans-serif;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    padding: 3vh;
     grid-area: profile;
     display: flex;
-    font-size: 4rem;
+    font-size: 2rem;
     justify-content:center;
     align-items: center;
     background-color: #fd3175;

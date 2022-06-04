@@ -85,6 +85,7 @@ grid-template-areas:
     border: 1px solid black;
     grid-area: header;
     display: flex;
+    user-select: none;
     align-items: center;
     background-color: #fd3175;
     color: white;
@@ -241,6 +242,7 @@ div[name="chat"].message{
     align-self:center;
 }
 .chat #chatlog li div.sender img.profile{
+    filter: var(--sender-img-filter);
     width:50px;
     border-radius: 10px;
     border: 1px solid black;
