@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'MinSans-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    display:  grid;
+    margin: 0;
+    height: 100vh;
+    font-family: "MinSans-Medium", sans-serif;
+    grid-template-areas: "header"
+    "main"
+    "footer";
+    grid-template-rows: 10vh 83vh 7vh;
+    color: white;
+}
+a, .redirect {
+    color: rgb(0, 102, 255);
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover, .redirect:hover{
+	cursor: pointer;
+}
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255,0,91,0.7);
+}
+header span#logo{
+    font-size: 2rem;
+    font-weight: 50;
+    margin-left: 10px;
+    cursor: pointer;
+}
+header nav#nav span{
+    font-size: 1.2rem;
+    margin: 10px;
+    word-break: keep-all;
+    cursor: pointer;
+}
+img {
+    border-radius: 10px;
+}
+.page{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: "part1"
+    "part2";
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    margin: 5px;
+    font-size: 2rem;
+}
+.page span{
+    background-color: rgb(67,67,67);
+}
+.page span#part1{
+    display: grid;
+    grid-template-areas: "img github"
+    "email email";
+    grid-gap: 10px;
+    border-radius: 10px;
+}
+.page span#part1 img#profile{
+    justify-self: center;
+    align-self: center;
+    grid-area: img;
+}
+.page span#part1 a#email{
+    display: inline;
+    justify-self: center;
+    align-self: center;
+    grid-area: email;
+}
+.page span#part1 div#github{
+    display: inline;
+    align-self: center;
+    justify-self: center;
+    grid-area: github;
+}
+.page span#part2 
+{
+    display: grid;
+    grid-template-areas: 
+    "img discord"
+    "kakaotalk kakaotalk";
+    grid-gap: 10px;
+    border-radius: 10px;
+}
+.page span#part2 div#discord{
+    grid-area: discord;
+    display: inline;
+    justify-self: center;
+    align-self: center;
+}
+.page span#part2 img#profile{
+    justify-self: center;
+    align-self: center;
+    grid-area: img;
+}
+.page span#part2 div#kakaotalk{
+    justify-self: center;
+    align-self: center;
+    grid-area: kakaotalk;
+}
+img#profile{
+    width: calc((43vh - 30px)/2);
+    height: calc((43vh - 30px)/2);
+}
+footer{
+    grid-area: footer;
+    background-color: rgba(71,4,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    font-size: 1.2rem;
+}
+footer *{
+    cursor: pointer;
+    padding:calc(3.5vh - 1.2rem);
+}

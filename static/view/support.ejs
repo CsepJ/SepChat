@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/support.css" />
+    <script type="text/javascript" src="./javascript/jquery.js"></script>
+    <script type="text/javascript" src="/javascript/support.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="header">
-        <span id="logo">SepChat</span>
-        <ul id="nav">
-            <li id="account"><i class="bi bi-person-circle"></i></li>
-            <li id="support"><i class="bi bi-question-circle"></i></li>
-        </ul>
-    </div>
+    <header id="titlebar">
+        <span id="logo">Sepcod</span>
+        <nav id="nav">
+            <span id="invite">봇</span>
+            <span id="notice">공지</span>
+            <span id="command">명령어</span>
+            <span id="update">버전</span>
+        </nav>
+    </header>
+    <span class="page">
+        <span id="part1">
+            <img id="profile" alt="프로필" title="https://github.com/CsepJ" src="/image/SepJProfile.png" />
+            <a id="email" href="mailto:sepj3240@gmail.com">sepj3240@gmail.com</a>
+            <div id="github" class="redirect">개발자 깃허브 링크</div>
+        </span>
+        <span id="part2">
+            <img id="profile" alt="개발자 프로필" title="개발자 프로필" src="/image/SepJProfile.png" />
+            <div id="discord" class="redirect">문의 디스코드 서버</div>
+            <div id="kakaotalk" class="redirect">개발자 오픈프로필</div>
+        </span>
+    </span>
+    <footer>
+        <span id="support">문의</span>
+        <span id="sepchat">Sepchat</span>
+    </footer>
 </body>
 </html>

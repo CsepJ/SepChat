@@ -45,8 +45,12 @@ app.use(express.static(__dirname+"/../static"));
 // < APP SIDE > //
 
 app.get("/", (req,res) => {
-    res.send("루트 경로 페이지는 제작중입니다.");
+    res.render("main.ejs");
     res.end();
+});
+
+app.get("/invite", (req,res) => {
+    res.redirect("https://discord.com/oauth2/authorize?client_id=764104980218118194&permissions=8&scope=bot%20applications.commands");
 })
 
 app.use("/signup", async (req,res) => {
@@ -107,7 +111,7 @@ app.use("/verification", async(req,res) => {
                 if(result.bool){
                     req.session.userid = result.user.id;
                     req.session.save(() => {
-                        res.redirect("/main");
+                        res.redirect("/chat");
                     });
                 }else{
                     res.redirect("/verification?error=코드를 다시 입력해주세요.");
@@ -118,11 +122,11 @@ app.use("/verification", async(req,res) => {
         }
     }
 });
-app.use("/main", async (req,res) => {
+app.use("/chat", async (req,res) => {
     if(req.method == "GET"&&req.session.userid){
         let {isSign, user} = await userUtil.getUser(req.session.userid) as {isSign: boolean, user:type.User|null};
         if(isSign){
-            res.render("main.ejs",
+            res.render("chat.ejs",
             {
                 name: user.name,
                 id: user.id
@@ -152,7 +156,7 @@ app.use("/login", async (req,res) => {
         }else{
             req.session.userid = user.user.id;
             req.session.save(() => {
-                res.redirect("/main");
+                res.redirect("/chat");
             });
         }
     }
