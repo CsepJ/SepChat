@@ -51,6 +51,16 @@ app.get("/", (req,res) => {
 
 app.get("/invite", (req,res) => {
     res.redirect("https://discord.com/oauth2/authorize?client_id=764104980218118194&permissions=8&scope=bot%20applications.commands");
+});
+
+app.get("/bot", (req,res) => {
+    res.render("bot.ejs");
+    res.end();
+});
+
+app.get("/notice", (req,res) => {
+    res.render("notice.ejs");
+    res.end();
 })
 
 app.use("/signup", async (req,res) => {

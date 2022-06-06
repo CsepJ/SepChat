@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	$("span#invite[name=sepbot]").on("click", () => {
 		confirm("초대 링크로 이동할까요?")?window.location.href = "https://discord.com/oauth2/authorize?client_id=764104980218118194&permissions=8&scope=bot%20applications.commands":false;
 	});
+    $("#invite").on("click", () => {
+        window.location.href = "/bot";
+    });
+    $("#notice").on("click", () => {
+        window.location.href = "/notice";
+    });
     $("span#sepchat").on("click", () => {
         confirm("셉챗 페이지로 이동할까요?")?window.location.href = "/signup":false;
     });

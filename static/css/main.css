@@ -48,7 +48,7 @@ main#page{
     margin: 5px;
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: "sepbot sepbot"
     "commands version"
